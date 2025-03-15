@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演習課題</title>
+    <style>
+        .que{
+            border: solid;
+            border-color: rgb(0, 116, 184);
+            background-color: aliceblue;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .code{
+            border: solid;
+            border-color: rgb(0, 116, 184);
+            font-weight: bold;
+            font-size: large;
+            border-radius: 10px;
+            background-color: rgb(0, 116, 184);
+            color: white;
+            padding-left: 10px;
+        }
+        body{
+            padding: 10px;
+        }
+        .mon{
+            font-weight: bold;
+        }
+        .btn{
+            font-size: large;
+            font-weight: bold;
+            background-color: rgb(35, 130, 185);
+            color: white;
+            border-color: aliceblue;
+            padding-left: 50px;
+            padding-right: 50px;
+            display: block;
+            margin: auto;
+            border-radius: 5px;
+        }
+        .inp{
+            font-size: x-large;
+            font-weight: bold;
+            background-color: rgb(96, 169, 211);
+            color: white;
+            border-color: aliceblue;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 30%;
+        }
+        .inp_box{
+            border: solid;
+            border-color: rgb(0, 116, 184);
+            font-weight: bold;
+            font-size: large;
+            border-radius: 10px;
+            background-color:aliceblue;
+            color: white;
+            padding: 10px;
+        }
+        body{
+            background-color:azure
+        }
+        .box{
+            background-color: #0073ff;
+            font-weight: bold;
+            color: aliceblue;
+            text-align: center;
+            font-size: large;
+        }
+        .message{
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            background-color: rgba(18, 89, 196, 0.753);
+            font-size: large;
+        }
+        .ans{
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: x-large;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">ご案内</div>
+    <marquee scrollamount="6" class="message" id="message">本ページは，概ね5分に１回のペースで更新しています． このウェブサイトは,平日の朝9:00~朝4:59までの間更新されています. 期間外の平日の朝5:00~9:00や土日の更新はありません.</marquee>
+    <div class="que">
+        <p class="code" id="q_code">【問題コード】xxxxxx</p>
+        <p class="mon" id="q_mon1">ここに問題が表示されます．</p>
+        <p class="mon" id="q_mon2">no_data</p>
+        <p class="mon" id="q_mon3">nothing</p>
+        <p class="mon" align="right" id="q_time">最終更新:9999/00/00 ??:??</p>
+    </div>
+    <br>
+    <div class="inp_box" id="elemnt1">
+        <center><input class="inp" id="anser"></center>
+        <button class="btn" onclick="check_ans()">確定</button>
+    </div>
+    <br>
+    <div class="que">
+        <center><p class="ans">採点結果</p></center>
+        <center><p class="ans" id="kekka">未回答</p></center>
+        <p align="right"></p>
+    </div>
+
+
+
+    <script src="test.js"></script>
+    <script src="data.js"></script>
+    <script src="ans.js"></script>
+    <script src="mente.js"></script>
+
+    <script>
+        const kaitou_kekka = document.getElementById("kekka");
+        const kaitou = document.getElementById("anser");
+        function check_ans(){
+            if(kaitou.value==ans){
+                kaitou_kekka.textContent = "正解"
+            }else{
+                kaitou_kekka.textContent = "不正解"
+            }
+        }
+        const mes = document.getElementById("message");
+    </script>
+</body>
+</html>
